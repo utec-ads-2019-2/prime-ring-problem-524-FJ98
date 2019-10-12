@@ -13,8 +13,7 @@ bool number_taken[MAX_RING_SIZE];
 void print_prime_ring();
 void gen_prime_ring();
 
-int main()
-{
+int main() {
     int caseNum = 1;
 
     prime_ring[1] = 1;
@@ -22,7 +21,8 @@ int main()
 
     number_taken[1] = true;
 
-    while (std::cin >> input && input != 0) {
+    while (std::cin >> input && input != 0)
+    {
         if (caseNum != 1) { cout << endl; }
         std::cout << "Case " << caseNum << ":" << std::endl;
         ++caseNum;
@@ -40,8 +40,7 @@ void gen_prime_ring()
 
     for (int i = 2; i <= input; ++i )
     {
-        if ( !number_taken[i] && primes[i + prime_ring[prime_ring_idx]] )
-        {
+        if ( !number_taken[i] && primes[i + prime_ring[prime_ring_idx]] ) {
             if (prime_ring_idx == input - 1 && !primes[i + prime_ring[1]] ) { continue; }
 
             number_taken[i] = true;
